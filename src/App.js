@@ -8,7 +8,7 @@ function App() {
 
   const [users, setUsers] = useState([])
   useEffect(() => {
-    axios.get('http://localhost:8080/get-users') 
+    axios.get('https://form-backend-eta.vercel.app/get-users') 
       .then (res => {
         setUsers(res.data)
       })
@@ -19,7 +19,7 @@ function App() {
     const name = document.querySelector('.txt-name').value
     const email = document.querySelector('.txt-email').value
     
-    axios.post('http://localhost:8080/create', {name : name, email : email})
+    axios.post('https://form-backend-eta.vercel.app/create', {name : name, email : email})
       .then (res => {
         if (res.data.status == 200) {
           window.location.reload()
